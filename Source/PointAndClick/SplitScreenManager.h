@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "SplitScreenManager.generated.h"
 
+
 UCLASS()
 class POINTANDCLICK_API ASplitScreenManager : public AActor
 {

@@ -11,17 +11,17 @@ void ASplitScreenManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	const UWorld* GameWorld = GetWorld();
+	const UWorld* GameWorld = AActor::GetWorld();
 
 	if (GameWorld == nullptr)
 	{
 		return;
 	}
 
-	UGameViewportClient* Viewport = AActor::GetWorld()->GetGameViewport();
-	FSplitscreenData ScreenLayout;
+	UGameViewportClient* Viewport = GameWorld->GetGameViewport();
 
-	const auto Screen1 = FPerPlayerSplitscreenData(1, 0.725f, 0, 0);
+	FSplitscreenData ScreenLayout;
+	const auto Screen1 = FPerPlayerSplitscreenData(1.0f, 0.725f, 0.0f, 0.0f);
 	ScreenLayout.PlayerData.Add(Screen1);
 
 	if (Viewport == nullptr)
